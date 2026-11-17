@@ -1,0 +1,49 @@
+BÀI LÀM: SO SÁNH TRADE-OFF CÁC GIẢI PHÁP PROMPTING NÂNG CAO
+
+1. Bước 1: Đề xuất 2 prompt mẫu
+Giải pháp 1 – Prompt đơn giản
+Bạn là trợ lý quản lý đơn hàng. Hãy kiểm tra thông tin đơn hàng, tính tổng tiền và xác định tình trạng thanh toán. Nếu thiếu hoặc sai dữ liệu, hãy thông báo lỗi, không tự đoán. Cuối cùng, tạo phản hồi ngắn gọn cho khách hàng.
+
+
+
+
+Giải pháp 2 – Prompt chi tiết
+Bạn là trợ lý xử lý đơn hàng online. Hãy thực hiện theo 3 bước:
+1. Kiểm tra mã đơn, tên khách, sản phẩm, số lượng, đơn giá và tình trạng thanh toán.
+2. Nếu dữ liệu hợp lệ, tính tổng tiền và xác định trạng thái đơn hàng.
+3. Tạo nội dung phản hồi cho khách hàng.
+Yêu cầu:
+- Nếu thiếu thông tin, ghi rõ thông tin cần bổ sung.
+- Nếu số lượng nhỏ hơn hoặc bằng 0 hoặc đơn giá âm, báo lỗi.
+- Nếu dữ liệu sai, không tiếp tục bước xử lý liên quan.
+- Không tự ý sửa hoặc đoán dữ liệu.
+- Không xác nhận đơn đã giao nếu chưa có thông tin.
+Kết quả gồm: Mã đơn, tổng tiền, tình trạng đơn hàng, lỗi (nếu có) và phản hồi khách hàng.
+
+
+
+
+2. Bước 2: Bảng so sánh Trade-off
+Tiêu chí	Giải pháp 1	Giải pháp 2
+Độ dễ hiểu	Cao	Trung bình
+Tốn token	Ít	Nhiều hơn
+Chặn lỗi dữ liệu	Trung bình	Tốt
+Khả năng kiểm soát	Thấp	Cao
+Tốc độ xử lý	Nhanh	Chậm hơn
+
+3. Bước 3: Lựa chọn và chạy thử
+chọn giải pháp 2 vì có quy trình rõ ràng, kiểm tra được dữ liệu thiếu hoặc sai và hạn chế AI đưa ra kết quả không chính xác
+
+Dữ liệu chạy thử:
+- Mã đơn: DH005
+- Tên khách: Nguyen Van An
+- Sản phẩm: Tai nghe Bluetooth
+- Số lượng: 2
+- Đơn giá: 250.000 VNĐ
+- Thanh toán: Đã thanh toán
+Kết quả AI:
+- Mã đơn: DH005.
+- Tổng tiền: 500.000 VNĐ.
+- Tình trạng: Đã thanh toán.
+- Lỗi: Không có.
+- Phản hồi: Cửa hàng đã tiếp nhận đơn hàng DH005 với tổng tiền 500.000 VNĐ. Cảm ơn quý khách!
